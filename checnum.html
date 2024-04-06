@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h3>Введите свое число</h3>
+        <form action="">
+            <input id="inputnum"type="number"></input>
+            <input type="button" value="Проверить число" onclick="getValueFromInput(inputnum)"></input>
+        </form>
+    </div>
+         <div class="show_progress">
+     <div id="message">
+     </div>
+    </div>
+    <script>
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+     }
+     let secret = getRandomInt(101)
+     let usernum = 20
+     {
+        function getValueFromInput(){
+            usernum = document.getElementById('inputnum').value
+            showHelper()
+        }
+     }
+    
+     function showHelper(){
+     if(usernum == secret){
+        createElement('Загаданное: ' + usernum)
+        createElement('Ты победил')
+     }
+     else if(usernum <= secret){
+        createElement('Загаданное: ' + usernum)
+        createElement("Мое число больше")
+     }
+     else{
+        createElement('Загаданное: ' + usernum)
+        createElement("Мое число меньше")
+     }
+    }
+    function createElement(text){
+        let myparagraf = document.createElement('p');
+        myparagraf.className = "alert";
+        myparagraf.innerHTML = "<strong>" + text + "</strong>";
+        document.body.append(myparagraf)
+        }
+    </script>
+</body>
+</html>
