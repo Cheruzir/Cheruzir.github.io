@@ -21,12 +21,18 @@
         function getRandomInt(max) {
             return Math.floor(Math.random() * max);
      }
+     let n_ch = 5
      let secret = getRandomInt(101)
      let usernum = 20
      {
         function getValueFromInput(){
+            if (n_ch != 0) {
             usernum = document.getElementById('inputnum').value
             showHelper()
+        }
+        else{
+        createElement("О нет! Твои ПОП ИТки закончилисиь! Сделай рестарт!")
+        }
         }
      }
     
@@ -34,14 +40,20 @@
      if(usernum == secret){
         createElement('Загаданное: ' + usernum)
         createElement('Ты победил')
+        n_ch --
+        createElement("У вас попитак: " + n_ch)
      }
      else if(usernum <= secret){
         createElement('Загаданное: ' + usernum)
         createElement("Мое число больше")
+        n_ch --
+        createElement("У вас попитак: " + n_ch)
      }
      else{
         createElement('Загаданное: ' + usernum)
         createElement("Мое число меньше")
+        n_ch --
+        createElement("У вас попитак: " + n_ch)
      }
     }
     function createElement(text){
