@@ -11,6 +11,8 @@
         <form action="">
             <input id="inputnum"type="number"></input>
             <input type="button" value="Проверить число" onclick="getValueFromInput(inputnum)"></input>
+            <input type="button" value="Hard mode" onclick="hard()"></input>
+            <input type="button" value="Рестарт" onclick="restart()"></input>
         </form>
     </div>
          <div class="show_progress">
@@ -21,6 +23,8 @@
         function getRandomInt(max) {
             return Math.floor(Math.random() * max);
      }
+     hardsу = 0
+     let wrong_hard = 0
      let n_ch = 5
      let secret = getRandomInt(101)
      let usernum = 20
@@ -31,27 +35,67 @@
             showHelper()
         }
         else{
-        createElement("О нет! Твои ПОП ИТки закончилисиь! ты ЛОХ!!!!!!!!!!!! И да, число было: " + secret)
+        createElement("О нет! Твои ПОП ИТки закончилисиь! ты НЕ смог!!!!!!!!!!!! И да, число было: " + secret)
         }
         }
      }
-    
+     function hard() {
+        secret = getRandomInt(101)
+        createElement("Игра усложнилась... Теперь у вас 7 попыток, но иногда будут глюки в подсказаках)")
+        hardsу = 1
+        n_ch = 7
+     }
+     function restart(){
+        n_ch = 5
+        secret = getRandomInt(101)
+        hardsу = 0
+        createElement("Рестарт активирован и Hard mode отключен")
+     }
      function showHelper(){
      if(usernum == secret){
         createElement('Загаданное: ' + usernum)
+        if (hardsу == 0) {
         createElement('Ты победил')
+        }
+        if (hardsу == 1) {
+        createElement('Ты победил в Hard mode!')
+        }
         n_ch --
         createElement("У вас попитак: " + n_ch)
      }
      else if(usernum <= secret){
         createElement('Загаданное: ' + usernum)
+        if (hardsу == 0) {
         createElement("Мое число больше")
+        }
+        if (hardsу == 1) {
+            wrong_hard = getRandomInt(3)
+            if (wrong_hard == 1) {
+                createElement("Мое число меньше?")
+                console.log("LIE!")
+            }
+            else {
+                createElement("Мое число больше?")
+            }
+        }
         n_ch --
         createElement("У вас попитак: " + n_ch)
      }
      else{
         createElement('Загаданное: ' + usernum)
+        if (hardsу == 0) {
         createElement("Мое число меньше")
+        }
+        if (hardsу == 1) {
+            wrong_hard = getRandomInt(3)
+            if (wrong_hard == 1) {
+                createElement("Мое число больше?")
+                console.log("LIE!")
+            }
+            else {
+                createElement("Мое число меньше?")
+            }
+        }
         n_ch --
         createElement("У вас попитак: " + n_ch)
      }
