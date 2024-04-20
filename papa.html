@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="document">Hello</title>
+    <script>
+        a = 0
+function focas() {
+    if (a == 0){
+    document.getElementById('test').textContent = "Т"
+    }
+    else if (a == 1){
+        document.getElementById('test').textContent = "Ты"
+    }
+    else if (a == 2){
+        document.getElementById('test').textContent = "Ты л"
+    }
+    else if (a == 3){
+        document.getElementById('test').textContent = "Ты ло"
+    }
+    else if (a == 4){
+    document.getElementById('test').textContent = "Не смотри на название сайта"
+    document.getElementById('document').textContent = "NEVER GIVE YOU UP"
+    }
+    a++
+}
+    </script>
+</head>
+<body>
+    <style>
+        .tyt {
+            color: blueviolet;
+            font-size: 300%;
+        }
+    </style>
+    <h2 class="tyt" id="test">Добро пожаловать</h2>
+    <input type="button" value="Кликни для фокуса" onclick="focas()">
+</body>
+</html>
