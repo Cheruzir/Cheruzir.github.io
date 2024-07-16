@@ -14,6 +14,14 @@
         OV = 0 // ОВ естественно
         NumAs = 1 // Прибавление ОВ
         pOn = 20
+        if (OV >= 200) {
+            OV+=150
+            document.getElementById("text-test").textContent = "Слушай, ты не плохо справляешься, получи 150 ОВ! - " + OV
+        }
+        if (OV >= 999) {
+            document.getElementById("text-test").textContent = "Ты получил 999 ОВ, вау"
+            a = 10001
+        }
         function texttest() {
         a++
         if (a == 1) {
@@ -158,14 +166,6 @@
     }
         function OVMAKE() {
         OV+=NumAs
-        }
-        if (OV >= 200) {
-            OV+=150
-            document.getElementById("text-test").textContent = "Слушай, ты не плохо справляешься, получи 150 ОВ! - " + OV
-        }
-        if (OV >= 999) {
-            document.getElementById("text-test").textContent = "Ты получил 999 ОВ, вау"
-            a = 10001
         }
      </script>
 </body>
