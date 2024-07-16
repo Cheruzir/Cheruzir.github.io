@@ -118,7 +118,7 @@
         else if (a == 46) {
             OVMAKE()
             document.getElementById("text-test").textContent = "Опачки - " + OV
-            document.getElementById("shopOOm").ariaValueText = "КУПИТЬ"
+            document.getElementById("shopOOm").nodeValue = "КУПИТЬ"
         }
         else if (a == 47) {
             OVMAKE()
@@ -136,10 +136,18 @@
             OVMAKE()
             document.getElementById("text-test").textContent = "ОВ - " + OV
         }
+        else if (a == 10001) {
+            OVMAKE()
+            document.getElementById("text-test").textContent = "ТЕПЕРЬ ТЫ ПОЛУЧИЛ НИЧЕГО!"
+        }
+        else if (a == 10002) {
+            OVMAKE()
+            document.getElementById("text-test").textContent = "ПОКА"
+        }
     }
     function shopONE() {
         if (OV >= pOn) {
-        OV -= pOn
+        OV-=pOn
         NumAs*=2
         pOn*=2
         document.getElementById("text-test").textContent = "Неа, нужно больше тэнге" + OV
@@ -150,6 +158,14 @@
     }
         function OVMAKE() {
         OV+=NumAs
+        }
+        if (OV >= 200) {
+            OV+=150
+            document.getElementById("text-test").textContent = "Слушай, ты не плохо справляешься, получи 150 ОВ! - " + OV
+        }
+        if (OV >= 999) {
+            document.getElementById("text-test").textContent = "Ты получил 999 ОВ, вау"
+            a = 10001
         }
      </script>
 </body>
