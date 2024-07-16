@@ -8,12 +8,10 @@
 <body>
     <input type="button" value="Нажми" onclick="texttest()"></input>
      <h2 id="text-test">Этот текст может изменяться!</h2>
-     <input id='shop_n_o' value='Стоит - ' + pOn type='button' onclick='shopONE()'></input>
      <script>
         a = 0 // Число диалогов
         OV = 0 // ОВ естественно
         NumAs = 1 // Прибавление ОВ
-        w = 2 // Прибавление к NumAs
         pOn = 15
         function texttest() {
         a++
@@ -140,15 +138,15 @@
         function createElement(){
         let myparagraf = document.createElement('input');
         myparagraf.className = "alert";
-        myparagraf.innerHTML = "<input type='button' value='Купить' onclick='texttest()'></input>";
+        myparagraf.innerHTML = "<strong type='button' value='Купить' onclick='texttest()'></strong>";
         document.body.append(myparagraf)
         }
         function shopONE() {
         if (OV >= pOn) {
         OV -= pOn
-        NumAs*=w
-        w++
+        NumAs*=2
         pOn*=2
+        document.getElementById("text-test").textContent = "Неа, нужно больше тэнге" + OV
         }
         else {
             document.getElementById("text-test").textContent = "Неа, нужно больше тэнге" + OV
