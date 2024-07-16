@@ -8,6 +8,7 @@
 <body>
     <input type="button" value="Нажми" onclick="texttest()"></input>
      <h2 id="text-test">Этот текст может изменяться!</h2>
+     <input id='shop_n_o' value='Стоит - ' + pOn type='button' onclick='shopONE()'></input>
      <script>
         a = 0 // Число диалогов
         OV = 0 // ОВ естественно
@@ -111,18 +112,30 @@
             OV = 0
             document.getElementById("text-test").textContent = "Ладно, нажимай до 20, мне лень что-то делать - " + OV
         }
-        else if (a >= 27 && a <= 46) {
+        else if (a >= 27 && a <= 45) {
             OVMAKE()
             document.getElementById("text-test").textContent = ". . . - " + OV
         }
-        else if (a == 47) {
+        else if (a == 46) {
             OVMAKE()
             document.getElementById("text-test").textContent = "Опачки - " + OV
             createElement()
         }
+        else if (a == 47) {
+            OVMAKE()
+            document.getElementById("text-test").textContent = "Новая кнопка, буду называть МАНОЙ, это как магазин - " + OV
+        }
         else if (a == 48) {
             OVMAKE()
-            document.getElementById("text-test").textContent = "Новая кнопка, буду называть МАНОЙ, это как магазин" + OV
+            document.getElementById("text-test").textContent = "Она улучшает твой заработок ОВ, в ДВА РАЗА! Но и стоимость увеличивается - !" + OV
+        }
+        else if (a == 49) {
+            OVMAKE()
+            document.getElementById("text-test").textContent = "Всё развликайся и дай просто ничего не делать - " + OV
+        }
+        else if (a == 50) {
+            OVMAKE()
+            document.getElementById("text-test").textContent = "ОВ - " + OV
         }
         function createElement(){
         let myparagraf = document.createElement('button');
@@ -136,6 +149,9 @@
         NumAs*=w
         w++
         pOn*=2
+        }
+        else if (OV >= pOn) {
+            document.getElementById("text-test").textContent = "Неа, нужно больше тэнге" + OV
         }
         }
         function OVMAKE() {
