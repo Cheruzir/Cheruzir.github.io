@@ -140,7 +140,7 @@
         function createElement(){
         let myparagraf = document.createElement('button');
         myparagraf.className = "alert";
-        myparagraf.innerHTML = "<input id='shop_n_o' value='Стоит - ' + pOn + '' type='button' onclick='shopONE()'>" + "</input>";
+        myparagraf.innerHTML = "<input id='shop_n_o' value='Стоит - ' + pOn type='button' onclick='shopONE()'>" + "</input>";
         document.body.append(myparagraf)
         }
         function shopONE() {
@@ -150,7 +150,7 @@
         w++
         pOn*=2
         }
-        else if (OV >= pOn) {
+        else {
             document.getElementById("text-test").textContent = "Неа, нужно больше тэнге" + OV
         }
         }
