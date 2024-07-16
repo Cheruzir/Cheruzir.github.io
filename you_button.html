@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="up-text">Тест</title>
+</head>
+<body>
+    <input type="button" value="Нажми" onclick="texttest()"></input>
+     <h2 id="text-test">Этот текст может изменяться!</h2>
+     <script>
+        a = 0
+        OV = 0
+        function texttest() {
+        a++
+        if (a == 1) {
+            document.getElementById("text-test").textContent = "Да да, это правда"
+        }
+        else if (a == 2) {
+            document.getElementById("text-test").textContent = "А что ты думал"
+        }
+        else if (a == 3) {
+            document.getElementById("text-test").textContent = ". . ."
+        }
+        else if (a == 4) {
+            document.getElementById("text-test").textContent = "Все?"
+        }
+        else if (a == 5) {
+            document.getElementById("text-test").textContent = "Ты доволен?"
+        }
+        else if (a == 6) {
+            document.getElementById("text-test").textContent = "Ладно"
+        }
+        else if (a == 7) {
+            document.getElementById("text-test").textContent = "Посмотри на название сайта"
+            document.getElementById("up-text").textContent = "Привет"
+        }
+        else if (a == 8) {
+            document.getElementById("text-test").textContent = "Посмотри на название сайта"
+            document.getElementById("up-text").textContent = "Уходи отсюд"
+        }
+        else if (a == 9) {
+            document.getElementById("text-test").textContent = "Посмотри на название сайта"
+            document.getElementById("up-text").textContent = "Всё, я не мешаю"
+        }
+        else if (a == 10) {
+            document.getElementById("text-test").textContent = "Все, тебя это устроивает"
+            document.getElementById("up-text").textContent = "Тест"
+        }
+        else if (a == 11) {
+            document.getElementById("text-test").textContent = ". . ."
+        }
+        else if (a == 12) {
+            document.getElementById("text-test").textContent = "Алеоп! - " + OV
+            console.log("Хихихихихиихихих")
+        }
+        else if (a == 13) {
+            document.getElementById("text-test").textContent = "Смотри, это твой ОВ! - " + OV
+        }
+        else if (a == 14) {
+            document.getElementById("text-test").textContent = "Он поднимаестя с каждым кликоом - " + OV
+        }
+        else if (a == 15) {
+            OV++
+            document.getElementById("text-test").textContent = "Жми! - " + OV
+        }
+        else if (a == 16) {
+            OV++
+            document.getElementById("text-test").textContent = "За ОВ можно получить ПРИЗ!!! - " + OV
+        }
+        else if (a == 17) {
+            OV++
+            document.getElementById("text-test").textContent = "Примерно за 5 ОВ! - " + OV
+        }
+        else if (a == 18) {
+            OV++
+            document.getElementById("text-test").textContent = "И за 999 ОВ! - " + OV
+        }
+        else if (a == 19) {
+            OV++
+            document.getElementById("text-test").textContent = "О, ты уже получил 5 ОВ! - " + OV
+        }
+        else if (a == 20) {
+            OV++
+            document.getElementById("text-test").textContent = "Так, погоди... - " + OV
+        }
+        else if (a == 21) {
+            OV++
+            document.getElementById("text-test").textContent = "Вот, ты получил, эээээээм, МАНА, да да - " + OV
+        }
+        else if (a == 22) {
+            OV++
+            document.getElementById("text-test").textContent = "Она невидима для таких, как ты! - " + OV
+        }
+        else if (a == 23) {
+            OV++
+            document.getElementById("text-test").textContent = "Так, она дает, ээээм ОВ, да, даааа, погоди, сейчас" + OV
+        }
+        else if (a == 24) {
+            OV++
+            document.getElementById("text-test").textContent = "ОПАЛЯЛЯЛЯЛЯЛЯЛ" + OV
+        }
+        else if (a == 25) {
+            OV== 0
+            document.getElementById("text-test").textContent = "Ой, не то" + OV
+        }
+        else if (a == 26) {
+            OV== 0
+            document.getElementById("text-test").textContent = "Ладно, нажимай до 20, мне лень что-то делать" + OV
+        }
+        else if (a >= 27 && a <= 47) {
+            OV++
+            document.getElementById("text-test").textContent = ". . ." + OV
+        }
+    }
+     </script>
+</body>
+</html>
