@@ -7,12 +7,13 @@
 </head>
 <body>
     <input type="button" value="Нажми" onclick="texttest()"></input>
+    <div><input type="button" id="shopOOm"value="КНОПКА НЕ РАБОТАЕТ" onclick="shopONE()"></input></div>
      <h2 id="text-test">Этот текст может изменяться!</h2>
      <script>
         a = 0 // Число диалогов
         OV = 0 // ОВ естественно
         NumAs = 1 // Прибавление ОВ
-        pOn = 15
+        pOn = 20
         function texttest() {
         a++
         if (a == 1) {
@@ -117,7 +118,7 @@
         else if (a == 46) {
             OVMAKE()
             document.getElementById("text-test").textContent = "Опачки - " + OV
-            createElement()
+            document.getElementById("shopOOm").ariaValueText = "КУПИТЬ"
         }
         else if (a == 47) {
             OVMAKE()
@@ -134,12 +135,6 @@
         else if (a >= 50 && a <= 9999) {
             OVMAKE()
             document.getElementById("text-test").textContent = "ОВ - " + OV
-        }
-        function createElement(){
-        let myparagraf = document.createElement('button');
-        myparagraf.className = "alert";
-        myparagraf.innerHTML = "<strong value='Купить' onclick='shopONE()'>Купить</strong>";
-        document.body.append(myparagraf)
         }
         function shopONE() {
         if (OV >= pOn) {
