@@ -7,7 +7,7 @@
 </head>
 <body>
     <input type="button" value="Нажми" onclick="texttest()"></input>
-    <input type="button" id="shopOOm"value="КНОПКА НЕ РАБОТАЕТ" onclick="shopONE()"></input>
+    <input type="button" id="shopOOm"value="" onclick="shopONE()">КНОПКА НЕ РАБОТАЕТ</input>
      <h2 id="text-test">Этот текст может изменяться!</h2>
      <script>
         a = 0 // Число диалогов
@@ -126,7 +126,7 @@
         else if (a == 46) {
             OVMAKE()
             document.getElementById("text-test").textContent = "Опачки - " + OV
-            document.getElementById("shopOOm").nodeValue = "КУПИТЬ"
+            document.getElementById("shopOOm").textContent = "КУПИТЬ: " + pOn
         }
         else if (a == 47) {
             OVMAKE()
@@ -158,7 +158,7 @@
         OV-=pOn
         NumAs*=2
         pOn*=2
-        document.getElementById("text-test").textContent = "Неа, нужно больше тэнге" + OV
+        document.getElementById("text-test").textContent = "Поздравляю с новым апргрейдом!" + OV
         }
         else {
             document.getElementById("text-test").textContent = "Неа, нужно больше тэнге" + OV
