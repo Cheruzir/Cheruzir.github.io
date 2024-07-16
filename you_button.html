@@ -136,17 +136,6 @@
             OVMAKE()
             document.getElementById("text-test").textContent = "ОВ - " + OV
         }
-        function shopONE() {
-        if (OV >= pOn) {
-        OV -= pOn
-        NumAs*=2
-        pOn*=2
-        document.getElementById("text-test").textContent = "Неа, нужно больше тэнге" + OV
-        }
-        else {
-            document.getElementById("text-test").textContent = "Неа, нужно больше тэнге" + OV
-        }
-        }
     }
     function shopONE() {
         if (OV >= pOn) {
@@ -158,7 +147,7 @@
         else {
             document.getElementById("text-test").textContent = "Неа, нужно больше тэнге" + OV
         }
-        }
+    }
         function OVMAKE() {
         OV+=NumAs
         }
