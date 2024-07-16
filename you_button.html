@@ -9,8 +9,11 @@
     <input type="button" value="Нажми" onclick="texttest()"></input>
      <h2 id="text-test">Этот текст может изменяться!</h2>
      <script>
-        a = 0
-        OV = 0
+        a = 0 // Число диалогов
+        OV = 0 // ОВ естественно
+        NumAs = 1 // Прибавление ОВ
+        w = 2 // Прибавление к NumAs
+        pOn = 15
         function texttest() {
         a++
         if (a == 1) {
@@ -61,56 +64,82 @@
             document.getElementById("text-test").textContent = "Он поднимаестя с каждым кликоом - " + OV
         }
         else if (a == 15) {
-            OV++
+            OVMAKE()
             document.getElementById("text-test").textContent = "Жми! - " + OV
         }
         else if (a == 16) {
-            OV++
+            OVMAKE()
             document.getElementById("text-test").textContent = "За ОВ можно получить ПРИЗ!!! - " + OV
         }
         else if (a == 17) {
-            OV++
+            OVMAKE()
             document.getElementById("text-test").textContent = "Примерно за 5 ОВ! - " + OV
         }
         else if (a == 18) {
-            OV++
+            OVMAKE()
             document.getElementById("text-test").textContent = "И за 999 ОВ! - " + OV
         }
         else if (a == 19) {
-            OV++
+            OVMAKE()
             document.getElementById("text-test").textContent = "О, ты уже получил 5 ОВ! - " + OV
         }
         else if (a == 20) {
-            OV++
+            OVMAKE()
             document.getElementById("text-test").textContent = "Так, погоди... - " + OV
         }
         else if (a == 21) {
-            OV++
+            OVMAKE()
             document.getElementById("text-test").textContent = "Вот, ты получил, эээээээм, МАНА, да да - " + OV
         }
         else if (a == 22) {
-            OV++
+            OVMAKE()
             document.getElementById("text-test").textContent = "Она невидима для таких, как ты! - " + OV
         }
         else if (a == 23) {
-            OV++
-            document.getElementById("text-test").textContent = "Так, она дает, ээээм ОВ, да, даааа, погоди, сейчас" + OV
+            OVMAKE()
+            document.getElementById("text-test").textContent = "Так, она дает, ээээм ОВ, да, даааа, погоди, сейчас - " + OV
         }
         else if (a == 24) {
-            OV++
-            document.getElementById("text-test").textContent = "ОПАЛЯЛЯЛЯЛЯЛЯЛ" + OV
+            OVMAKE()
+            document.getElementById("text-test").textContent = "ОПАЛЯЛЯЛЯЛЯЛЯЛ - " + OV
         }
         else if (a == 25) {
-            OV==0
-            document.getElementById("text-test").textContent = "Ой, не то" + OV
+            OV = 0
+            document.getElementById("text-test").textContent = "Ой, не то - " + OV
         }
         else if (a == 26) {
-            OV==0
-            document.getElementById("text-test").textContent = "Ладно, нажимай до 20, мне лень что-то делать" + OV
+            OV = 0
+            document.getElementById("text-test").textContent = "Ладно, нажимай до 20, мне лень что-то делать - " + OV
         }
-        else if (a >= 27 && a <= 47) {
-            OV++
-            document.getElementById("text-test").textContent = ". . ." + OV
+        else if (a >= 27 && a <= 46) {
+            OVMAKE()
+            document.getElementById("text-test").textContent = ". . . - " + OV
+        }
+        else if (a == 47) {
+            OVMAKE()
+            document.getElementById("text-test").textContent = "Опачки - " + OV
+            createElement()
+        }
+        else if (a == 48) {
+            OVMAKE()
+            document.getElementById("text-test").textContent = "Новая кнопка, буду называть МАНОЙ, это как магазин" + OV
+        }
+        function createElement(){
+        let myparagraf = document.createElement('input');
+        myparagraf.className = "alert";
+        myparagraf.innerHTML = "<strong id='shop_n_o' value='Стоит - ' + pOn + '' type='button' onclick='shopONE()'>" + "</strong>";
+        document.body.append(myparagraf)
+        }
+        function shopONE() {
+        if (OV >= pOn) {
+        OV -= pOn
+        NumAs*=w
+        w++
+        pOn*=2
+        }
+        }
+        function OVMAKE() {
+        OV+=NumAs
         }
     }
      </script>
