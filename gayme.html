@@ -5,10 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-
+    // Характеристики - параметры
+    let Hp = 100
+    let Dmg = random_damage(Dmg_Z)
+    let Dmg_Z = 5
+    let Sob = 0
+    let nes = 0
+    let non = 0
+    // Рандом 
+    function random(max) { 
+        return Math.floor(Math.random() * max);
+    }
+    function random_damage(max) { 
+        return Math.floor(Math.random() * max + 7);
+    }
+    // События
+    function Pik() {
+    if (Sob == 0) {
+    document.getElementById("Text").textContent = "Эта игра - типо текстовой РПГ. Снизу Ваше Здоровье и Атака. Также у вас есть кнопки, каждая кнопка что-то делает. Удачи!"
+    document.getElementById("Hp").textContent = "Хп - " + Hp
+    document.getElementById("Damage").textContent = "Атака - " + Dmg_Z + 4
+    Sob++
+    }
+    else {
+        Sob=random(0)+1
+        if (Sob == 1) {
+            document.getElementById("Text").textContent = "Вы ходите по тропинке. Вы видите маленькие фиолетовые камни. Они тускло светятся. Пройдете дальше?"
+            if (nes == 1) {
+                document.getElementById("Text").textContent = "Вы прошли по ним, вы почуствовали небольшую боль и мороз в ногах. Вы получили 15 урона и эффект мороза"
+                nes--
+            }
+            if (non == 1) {
+                document.getElementById("Text").textContent = "Вы прошли мимо, и вы пошли дальше по тропинке"
+                non--
+            }
+        }
+    }
+    }
+    // Скрипт на согласие или отказ
+    function no() {
+        non++
+    }
+    function yes() {
+        nes++
+    }
     </script>
 </head>
 <body>
-    <img src="C:\My projects\img\meow.webp" alt="">
+    <h3 id="Text">Извините, игра может быть чуть чуть корявой</h3>
+    <div>
+    <input type="button" value="Начать или продолжить" onclick="Pik()"></input>
+    <input type="button" value="Атаковать" onclick=""></input>
+    <input type="button" value="Защита" onclick=""></input>
+    <input type="button" value="Отказаться" onclick="no()"></input>
+    <input type="button" value="Согласиться" onclick="yes()"></input>
+    </div>
+    <div>
+    <h3 id="Hp"></h3>
+    <h3 id="Damage"></h3>
+    </div>
 </body>
 </html>
