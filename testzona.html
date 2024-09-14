@@ -19,12 +19,11 @@
     <input type="number" value="" id="sodASS"></input>
     <input type="radio" name="test" checked value="В городе" id="RADIO1">
     <input type="radio" name="test" value="Вне города" id="RADIO2">
-    <p id="textA"></p>
     <script>
     a=0
     b=85
-    Rast = document.getElementById("sodA").value
-    time = document.getElementById("sodASS").value
+    Rast = 0
+    time = 0
     answer = 0
     function Rashet() {
     a==document.getElementById("sod").value
@@ -35,15 +34,15 @@
     time == document.getElementById("sodASS").value
     answer == Rast/time
     if (document.getElementById("RADIO1") == true) {
-    if (answer > 60) {
-        document.getElementById("textA").textContent = "Результат: " + answer + " КМ/час, эта скорость запрещена в городе!" 
+    if (answer >= 60) {
+        document.getElementById("text").textContent = "Результат: " + answer + " КМ/час, эта скорость запрещена в городе!" 
     }
     else {
-        document.getElementById("textA").textContent = "Результат: " + answer + " КМ/час, эта скорость сбалансирована, вы не должны платить штраф :D"
+        document.getElementById("text").textContent = "Результат: " + answer + " КМ/час, эта скорость сбалансирована, вы не должны платить штраф :D"
     }
     }
-    else if (document.getElementById("RADIO1") == false){
-        document.getElementById("textA").textContent = "Результат: " + answer 
+    else {
+        document.getElementById("text").textContent = "Результат: " + answer 
     }
     }
     </script>
