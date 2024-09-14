@@ -8,13 +8,13 @@
 <body>
     <h1>Расчет авто с 85км/час</h1>
     <input type="button" value="Расчет" onclick="Rashet()" id="ButToN"></input>
-    <input type="number" value="Кол-во часов" id="sod"></input>
+    <input type="number" value="" id="sod"></input>
     <p id="text"></p>
     <script>
-    a=0
+    let a=0
     let b=85
     function Rashet() {
-    a== document.getElementById("sod").value
+    a==document.getElementById("sod").value
     document.getElementById("text").textContent = "Результат: " + b*a + " КМ" 
     }
     </script>
