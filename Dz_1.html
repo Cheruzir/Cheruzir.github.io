@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <h1>Расчет авто с 85км/час 2.0</h1>
+    <input type="button" value="Расчет" onclick="getValueFromInput()"></input>
+    <p>Часов:</p>
+    <input type="number" id="sod"></input>
+    <p id="text"></p>
+</div>
+<div>
+    <h1>Расчет авто с ?км/час</h1>
+    <input type="button" value="Расчет" onclick="getValueFromInputERA()"></input>
+    <p>Расстояние:</p>
+    <input type="number" id="sodA"></input>
+    <p>Время:</p>
+    <input type="number" id="sodASS"></input>
+    <h3>У меня радиопереключатель не работает, почему то, поэтому тут костыль ввиде кнопок </h3>
+    <input type="button" value="В городе" onclick="In()"></input>
+    <input type="button" value="Вне города" onclick="Out()"></input>
+    <p id="textA"></p>
+</div>
+<div>
+    <h1>Забег на ЛЕТНИЙ СЕЗОН</h1>
+    <input type="button" value="КРУТИТЕ БАРАБАН!" onclick="RANDOMTIME()"></input>
+    <h2 id="omg"></h2>
+</div>
+    <script>
+    a=0
+    b=85
+    Rast = 0
+    time = 0
+    answer = 1
+    Ingorod = 0
+    Noingorod = 0
+    PROverka = 0
+    function Math() {
+    return Math.floor(Math.random() * 411 + 150);
+    }
+    HzKakoeChislo = [Math(),Math(),Math(),Math(),Math(),Math(),Math(),Math(),Math(),Math()]
+    function getValueFromInput(){
+        if(a != 0,1) {
+            a = document.getElementById("sod").value
+            Rashet()
+        }
+    }
+    function getValueFromInputERA(){
+        if(Rast != 0,1 && time != 0,1) {
+            Rast = document.getElementById("sodA").value
+            time = document.getElementById("sodASS").value
+            RashitSKOR()
+        }
+    }
+    function In(){
+        Ingorod = 1
+        Noingorod = 0
+    }
+    function Out(){
+        Ingorod = 0
+        Noingorod = 1
+    }
+    function Rashet() { //1 ДИВ
+    document.getElementById("text").textContent = "Результат: " + b * a + " КМ" 
+    }
+    function RashitSKOR() {//2 ДИВ
+    answer = Rast/time
+    if (Ingorod == 1) {
+    if (answer > 60) {
+        document.getElementById("textA").textContent = "Результат: " + answer + " КМ/час, эта скорость запрещена в городе!" 
+    }
+    else {
+        document.getElementById("textA").textContent = "Результат: " + answer + " КМ/час, эта скорость сбалансирована, вы не должны платить штраф :D"
+    }
+    }
+    else if (Noingorod == 1){
+        document.getElementById("textA").textContent = "Результат: " + answer 
+    }
+    }
+    function RANDOMTIME() { //3 ДИВ
+    HzKakoeChislo = [Math(),Math(),Math(),Math(),Math(),Math(),Math(),Math(),Math(),Math()]
+    PROverka = HzKakoeChislo[0] + HzKakoeChislo[1] + HzKakoeChislo[2] + HzKakoeChislo[3] + HzKakoeChislo[4] + HzKakoeChislo[5] + HzKakoeChislo[6] + HzKakoeChislo[7] + HzKakoeChislo[8] + HzKakoeChislo[9]
+    if (PROverka >= 1500) {
+    document.getElementById("omg").textContent = "Больше чем в прошлом году! " + PROverka + " м!"
+    }
+    else if (PROverka <= 1500) {
+    document.getElementById("omg").textContent = "меньше, ну тоже нечего! " + PROverka + " м"
+    }
+    }
+    </script>
+</body>
+</html>
