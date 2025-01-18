@@ -6,6 +6,7 @@
 let point = 0
 let bestpoint = 0
 let charge = 0
+let final = 0
 	//  объявляем объект, внутри которого будет происходить основная механика игры
 	var Memory = {
 
@@ -70,6 +71,7 @@ let charge = 0
 					_.guess = $(this).attr("data-id");
 				// если мы перевернули вторую и она совпадает с первой
 				} else if(_.guess == $(this).attr("data-id") && !$(this).hasClass("picked")){
+					bestpoint++
 					if (bestpoint > charge) {
 						charge = bestpoint
 					} 
@@ -110,25 +112,25 @@ let charge = 0
 				document.getElementById("Point").textContent = "Неудачных пар: " + point
 				document.getElementById("bestboth").textContent = "Самое большое кол-во повторных пар: " + charge
 				if(point >= 66) {
-				document.getElementById("how").textContent = "Оценка F"
+				document.getElementById("how").textContent = "Память: Оценка F"
 				}
 				else if(point <= 65 && point >= 50) {
-				document.getElementById("how").textContent = "Оценка F+"
+				document.getElementById("how").textContent = "Память: Оценка F+"
 				}
 				else if(point <= 49 && point >= 40) {
-				document.getElementById("how").textContent = "Оценка C"
+				document.getElementById("how").textContent = "Память: Оценка C"
 				}
 				else if(point <= 39 && point >= 30) {
-				document.getElementById("how").textContent = "Оценка C+"
+				document.getElementById("how").textContent = "Память: Оценка C+"
 				}
 				else if(point <= 29 && point >= 25) {
-					document.getElementById("how").textContent = "Оценка B"
+					document.getElementById("how").textContent = "Память: Оценка B"
 				}
 				else if(point <= 24 && point >= 15) {
-					document.getElementById("how").textContent = "Оценка A"
+					document.getElementById("how").textContent = "Память: Оценка A"
 				}
 				else if(point <= 14) {
-					document.getElementById("how").textContent = "Оценка ОТЛИЧНАЯ ПАМЯТь"
+					document.getElementById("how").textContent = "Память: Оценка ОТЛИЧНАЯ ПАМЯТь"
 				}
 				Memory.$game.fadeOut();
 			}, 1000);
@@ -182,7 +184,7 @@ let charge = 0
 				frag += '<div class="card" data-id="'+ v.id +'"><div class="inside">\
 				<div class="front"><img src="'+ v.img +'"\
 				alt="'+ v.name +'" /></div>\
-				<div class="back"><img src="D:/My projects/Pvz/img/e.PNG"\
+				<div class="back"><img src="https://github.com/Cheruzir/Cheruzir.github.io/blob/main/Pvz/img/e.PNG?raw=true"\
 				alt="Codepen" /></div></div>\
 				</div>';
 			});
@@ -197,63 +199,63 @@ let charge = 0
 			// название
 			name: "Пушка",
 			// адрес картинки
-			img: "D:/My projects/Pvz/img/GUN.jpg",
+			img: "https://github.com/Cheruzir/Cheruzir.github.io/blob/main/Pvz/img/GUN.jpg?raw=true",
 			// порядковый номер пары
 			id: 1,
 		},
 		{
 			name: "Кот",
-			img: "D:/My projects/Pvz/img/meow.webp",
+			img: "https://raw.githubusercontent.com/Cheruzir/Cheruzir.github.io/refs/heads/main/Pvz/img/meow.webp",
 			id: 2
 		},
 		{
 			name: "Троль",
-			img: "D:/My projects/Pvz/img/roll.webp",
+			img: "https://raw.githubusercontent.com/Cheruzir/Cheruzir.github.io/refs/heads/main/Pvz/img/roll.webp",
 			id: 3
 		},
 		{
 			name: "Козел",
-			img: "D:/My projects/Pvz/img/i.png",
+			img: "https://github.com/Cheruzir/Cheruzir.github.io/blob/main/Pvz/img/i.png?raw=true",
 			id: 4
 		}, 
 		{
 			name: "ШЛЯПА",
-			img: "D:/My projects/Pvz/img/HET.webp",
+			img: "https://raw.githubusercontent.com/Cheruzir/Cheruzir.github.io/refs/heads/main/Pvz/img/HET.webp",
 			id: 5
 		},
 		{
 			name: "Ботнок",
-			img: "D:/My projects/Pvz/img/FFFF.webp",
+			img: "https://raw.githubusercontent.com/Cheruzir/Cheruzir.github.io/refs/heads/main/Pvz/img/FFFF.webp",
 			id: 6
 		},
 		{
 			name: "ДЕД",
-			img: "D:/My projects/Pvz/img/DED_2.0.png",
+			img: "https://github.com/Cheruzir/Cheruzir.github.io/blob/main/Pvz/img/DED_2.0.png?raw=true",
 			id: 7
 		},
 		{
 			name: "ТЕСТ",
-			img: "D:/My projects/Pvz/img/DED_2.0WHAT.png",
+			img: "https://github.com/Cheruzir/Cheruzir.github.io/blob/main/Pvz/img/DED_2.0WHAT.png?raw=true",
 			id: 8
 		},
 		{
 			name: "Черепаха",
-			img: "D:/My projects/Pvz/img/TOTLE.webp",
+			img: "https://raw.githubusercontent.com/Cheruzir/Cheruzir.github.io/refs/heads/main/Pvz/img/TOTLE.webp",
 			id: 9
 		},
 		{
 			name: "sИНДЕП",
-			img: "D:/My projects/Pvz/img/SPY.png",
+			img: "https://github.com/Cheruzir/Cheruzir.github.io/blob/main/Pvz/img/SPY.png?raw=true",
 			id: 10
 		},
 		{
 			name: "ROCK",
-			img: "D:/My projects/Pvz/img/rock.webp",
+			img: "https://raw.githubusercontent.com/Cheruzir/Cheruzir.github.io/refs/heads/main/Pvz/img/rock.webp",
 			id: 11
 		},
 		{
-			name: "wordpress",
-			img: "D:/My projects/Pvz/img/Zombie_football_head.png",
+			name: "CJKLFN",
+			img: "https://github.com/Cheruzir/Cheruzir.github.io/blob/main/Pvz/img/Zombie_football_head.png?raw=true",
 			id: 12
 		},
 	];
