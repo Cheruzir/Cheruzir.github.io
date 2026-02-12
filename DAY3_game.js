@@ -48,6 +48,7 @@ const SPIN = new function () {
     }
     SPIN.start = (W, H) => {
         cnv = $('cnv')
+        ctx = cnv.getContext('2d')
         wight = W
         height = H
         cnv.width = width
@@ -138,3 +139,4 @@ window.addEventListener('load', function () {
 })
 
     SPIN.start(480, 360)
+
