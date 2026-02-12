@@ -48,7 +48,6 @@ const SPIN = new function () {
     }
     SPIN.start = (W, H) => {
         cnv = $('cnv')
-        ctx = cnv.getContext('2d')
         wight = W
         height = H
         cnv.width = width
@@ -67,7 +66,7 @@ const SPIN = new function () {
 }
 
 SPIN.update = () => {
-    ctx.clearRect(0, 0, width, height) ;
+    ctx.clearRect(0, 0, width, height)
     for (let i = nodes.lenght-1; i >= 0; i--) {
         if (for_destroy[nodes[i]].id) {
             nodes.splice(i, 1)
@@ -137,4 +136,5 @@ window.addEventListener('load', function () {
         s.draw_text(640/2-60, 5, '#58bf5b', 'Игровой счет: '+score)
     })
 })
+
     SPIN.start(480, 360)
